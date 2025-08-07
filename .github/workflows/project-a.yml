@@ -1,0 +1,13 @@
+# .github/workflows/project-a.yml
+name: Build Project A
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  call-maven:
+    uses: ./.github/workflows/reusable-maven.yml
+    with:
+      java-version: '17'
+      goals: 'clean install'
